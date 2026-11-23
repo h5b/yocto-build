@@ -22,11 +22,11 @@ jobs:
       options: --user root
     name: "Build (${{ matrix.arch }})"
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@scarthgap
       - name: Synchronize Repositories
         run: |
           PATH="${HOME}/.local/bin:${PATH}"
-          repo init -u https://github.com/jhnc-oss/yocto-manifests.git -b main
+          repo init -u https://github.com/jhnc-oss/yocto-manifests.git -b scarthgap
           repo sync
         shell: sudo -u yocto bash --noprofile --norc -eo pipefail {0}
         working-directory: /opt/yocto

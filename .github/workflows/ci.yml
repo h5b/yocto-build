@@ -22,7 +22,7 @@ jobs:
       options: --user root
     name: "Build (${{ matrix.arch }})"
     steps:
-      - uses: actions/checkout@scarthgap
+      - uses: actions/checkout@main
       - name: Synchronize Repositories
         run: |
           PATH="${HOME}/.local/bin:${PATH}"
